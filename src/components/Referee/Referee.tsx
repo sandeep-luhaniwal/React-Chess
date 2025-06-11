@@ -200,27 +200,6 @@ export default function Referee() {
   return (
     <div className="game-container">
       <div className="abcd">
-        <div className="game-sidebar left-sidebar">
-          <Timer
-            team={TeamType.OPPONENT}
-            isActive={board.totalTurns % 2 === 0}
-            initialTime={blackTime}
-            onTimeOut={() => setBoard(prev => {
-              const newBoard = prev.clone();
-              newBoard.winningTeam = TeamType.OUR;
-              return newBoard;
-            })}
-          />
-          <CapturedPieces team={TeamType.OUR} capturedPieces={blackCaptured} />
-        </div>
-
-
-        <div className="game-center ">
-          <p style={{ color: "white", fontSize: "24px", textAlign: "center" }}>
-            Total turns: {board.totalTurns}
-          </p>
-          <Chessboard playMove={playMove} pieces={board.pieces} />
-        </div>
 
         <div className="game-sidebar right-sidebar">
           <Timer
@@ -234,16 +213,39 @@ export default function Referee() {
             })}
           />
           <CapturedPieces team={TeamType.OPPONENT} capturedPieces={whiteCaptured} />
-          <MoveHistory moves={moves} />
+
         </div>
 
-        <div className="modal hidden" ref={modalRef}>
-          <div className="modal-body">
-            <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.png`} />
-            <img onClick={() => promotePawn(PieceType.BISHOP)} src={`/assets/images/bishop_${promotionTeamType()}.png`} />
-            <img onClick={() => promotePawn(PieceType.KNIGHT)} src={`/assets/images/knight_${promotionTeamType()}.png`} />
-            <img onClick={() => promotePawn(PieceType.QUEEN)} src={`/assets/images/queen_${promotionTeamType()}.png`} />
+        <div className="game-center abc">
+          <p style={{ color: "white", fontSize: "24px", textAlign: "center" }}>
+            Total turns: {board.totalTurns}
+          </p>
+          <Chessboard playMove={playMove} pieces={board.pieces} />
+        </div>
+        <div className="flex">
+          <div className="game-sidebar left-sidebar">
+            <Timer
+              team={TeamType.OPPONENT}
+              isActive={board.totalTurns % 2 === 0}
+              initialTime={blackTime}
+              onTimeOut={() => setBoard(prev => {
+                const newBoard = prev.clone();
+                newBoard.winningTeam = TeamType.OUR;
+                return newBoard;
+              })}
+            />
+            <CapturedPieces team={TeamType.OUR} capturedPieces={blackCaptured} />
           </div>
+          <MoveHistory moves={moves} />
+        </div>
+      </div>
+
+      <div className="modal hidden" ref={modalRef}>
+        <div className="modal-body">
+          <img onClick={() => promotePawn(PieceType.ROOK)} src={`/assets/images/rook_${promotionTeamType()}.png`} />
+          <img onClick={() => promotePawn(PieceType.BISHOP)} src={`/assets/images/bishop_${promotionTeamType()}.png`} />
+          <img onClick={() => promotePawn(PieceType.KNIGHT)} src={`/assets/images/knight_${promotionTeamType()}.png`} />
+          <img onClick={() => promotePawn(PieceType.QUEEN)} src={`/assets/images/queen_${promotionTeamType()}.png`} />
         </div>
       </div>
 

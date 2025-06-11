@@ -35,7 +35,7 @@ export default function MoveHistory({ moves }: Props) {
         {moves.map((move, index) => (
           <div key={index} className="move">
             {index % 2 === 0 && <span className="move-number">{(index / 2) + 1}.</span>}
-            <span className={`move-text ${move.team === TeamType.OUR ? 'white-move' : 'black-move'}`}>
+            <span className={`move-text ${move.team === TeamType.OUR ? 'white-move' : 'black-move ms-1'}`}>
               {getPieceSymbol(move.piece)}{move.from}-{move.to}
               {move.captured && "x"}
             </span>

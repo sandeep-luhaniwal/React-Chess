@@ -1,0 +1,28 @@
+/* src/components/Referee/Referee.css */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+.game-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.left-sidebar {
+  align-items: flex-end;
+}
+
+.right-sidebar {
+  align-items: flex-start;
+}
+
+.game-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

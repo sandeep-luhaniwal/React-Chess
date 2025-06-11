@@ -1,9 +1,9 @@
 #chessboard {
   display: grid;
-  grid-template-columns: repeat(8, 100px);
-  grid-template-rows: repeat(8, 100px);
-  width: 800px;
-  height: 800px;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  width: 400px;
+  height: 400px;
   background-color: blue;
 }
 
@@ -21,18 +21,18 @@
 
 .modal > .modal-body {
   position: absolute;
-  top: calc(50% - 150px);
-  left: calc(50% - 400px);
+  top: calc(50% - 75px);
+  left: calc(50% - 200px);
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 300px;
-  width: 800px;
+  width: 400px;
   background-color: rgba(127, 127, 127, 0.8);
 }
 
 .modal > .modal-body > img {
-  height: 120px;
+  height: 60px;
   padding: 20px;
   border-radius: 50%;
 }

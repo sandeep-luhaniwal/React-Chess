@@ -1,16 +1,16 @@
 .tile {
   display: grid;
   place-content: center;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
 
 .tile .chess-piece {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100px;
+  background-size: 50px;
 }
 
 .tile .chess-piece:hover {
@@ -35,8 +35,8 @@
 
 .tile-highlight:not(.chess-piece-tile)::before {
   content: " ";
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -44,8 +44,8 @@
 .tile-highlight.chess-piece-tile::before {
   position: absolute;
   content: " ";
-  width: 90px;
-  height: 90px;
+  width: 40px;
+  height: 40px;
   border: 5px solid rgba(0, 0, 0, 0.4);
   border-radius: 50%;
 }

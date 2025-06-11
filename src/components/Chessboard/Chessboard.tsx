@@ -24,7 +24,7 @@ export default function Chessboard({playMove, pieces} : Props) {
     if (element.classList.contains("chess-piece") && chessboard) {
       const grabX = Math.floor((e.clientX - chessboard.offsetLeft) / GRID_SIZE);
       const grabY = Math.abs(
-        Math.ceil((e.clientY - chessboard.offsetTop - 800) / GRID_SIZE)
+        Math.ceil((e.clientY - chessboard.offsetTop - 400) / GRID_SIZE)
       );
       setGrabPosition(new Position(grabX, grabY));
 
@@ -41,12 +41,12 @@ export default function Chessboard({playMove, pieces} : Props) {
   function movePiece(e: React.MouseEvent) {
     const chessboard = chessboardRef.current;
     if (activePiece && chessboard) {
-      const minX = chessboard.offsetLeft - 25;
-      const minY = chessboard.offsetTop - 25;
-      const maxX = chessboard.offsetLeft + chessboard.clientWidth - 75;
-      const maxY = chessboard.offsetTop + chessboard.clientHeight - 75;
-      const x = e.clientX - 50;
-      const y = e.clientY - 50;
+      const minX = chessboard.offsetLeft - 12;
+      const minY = chessboard.offsetTop - 12;
+      const maxX = chessboard.offsetLeft + chessboard.clientWidth - 40;
+      const maxY = chessboard.offsetTop + chessboard.clientHeight - 40;
+      const x = e.clientX - 25;
+      const y = e.clientY - 25;
       activePiece.style.position = "absolute";
 
       //If x is smaller than minimum amount
@@ -82,7 +82,7 @@ export default function Chessboard({playMove, pieces} : Props) {
     if (activePiece && chessboard) {
       const x = Math.floor((e.clientX - chessboard.offsetLeft) / GRID_SIZE);
       const y = Math.abs(
-        Math.ceil((e.clientY - chessboard.offsetTop - 800) / GRID_SIZE)
+        Math.ceil((e.clientY - chessboard.offsetTop - 400) / GRID_SIZE)
       );
 
       const currentPiece = pieces.find((p) =>
