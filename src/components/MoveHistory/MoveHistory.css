@@ -1,0 +1,44 @@
+/* src/components/MoveHistory/MoveHistory.css */
+.move-history {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  max-height: 600px;
+  overflow-y: auto;
+  width: 200px;
+}
+
+.move-history h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.moves-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.move {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.move-number {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.move-text {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.white-move {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.black-move {
+  background-color: #333333;
+  color: #ffffff;
+}
